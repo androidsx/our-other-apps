@@ -42,9 +42,13 @@ public class AppsActivity extends ListActivity {
 	}
 
 	private void openApp(String app) {
-		Intent intent = new Intent(Intent.ACTION_VIEW);
-		intent.setData(Uri.parse("market://details?id="+app));
-		startActivity(intent);
+		try {
+			startActivity(new Intent(Intent.ACTION_VIEW,
+					Uri.parse("market://details?id=" + app)));
+		} catch (android.content.ActivityNotFoundException anfe) {
+			startActivity(new Intent(Intent.ACTION_VIEW,
+					Uri.parse("http://play.google.com/store/apps/details?id="+ app)));
+		}
 	}
 
 	@Override
