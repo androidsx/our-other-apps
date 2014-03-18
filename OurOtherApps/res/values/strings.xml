@@ -3,8 +3,8 @@
 
     <string name="app_name">OurOtherApps</string>
     <string name="action_settings">Settings</string>
-    <string name="hello_world">OurOtherApp</string>
-    <string name="goactivity">Go to other Activity</string>
+    <string name="title">OurOtherApp</string>
+    <string name="goactivity">Go to ActivityApps</string>
     <string name="title_activity_apps">AppsActivity</string>
 
 </resources>

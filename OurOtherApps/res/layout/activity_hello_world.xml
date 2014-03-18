@@ -15,9 +15,9 @@
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="40dp"
+        android:text="@string/title"
         android:textSize="25sp"
-        android:textStyle="bold"
-        android:text="@string/hello_world" />
+        android:textStyle="bold" />
 
     <Button
         android:id="@+id/btnNext"
