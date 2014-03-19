@@ -29,7 +29,7 @@ public class AppsActivity extends Activity {
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_apps);
-		customList();
+		configureAppList();
 		setupUI();
 	}
 	
@@ -45,7 +45,7 @@ public class AppsActivity extends Activity {
 	}
 
 	
-	private void customList(){
+	private void configureAppList(){
 		
 		ListView list = (ListView) findViewById(R.id.list);
 		ArrayList<App> arraydir = new ArrayList<App>();
