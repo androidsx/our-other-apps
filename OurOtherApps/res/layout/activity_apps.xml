@@ -6,12 +6,11 @@
 
     <TextView
         android:id="@+id/check"
-        android:layout_width="296dp"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginBottom="20dp"
-        android:layout_marginLeft="20dp"
         android:layout_marginTop="20dp"
-        android:gravity="left"
+        android:gravity="center"
         android:text="@string/checkout"
         android:textSize="14sp"
         android:textStyle="bold" />
@@ -20,13 +19,9 @@
         android:id="@+id/list"
         android:layout_width="fill_parent"
         android:layout_height="304dp"
-        android:layout_weight="0.43" />
-
-    <Button
-        android:id="@+id/btnPublisher"
-        android:layout_marginTop="8dp"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="@string/publisher" />
+        android:layout_weight="0.43"
+        android:background="@android:color/transparent"
+        android:divider="@android:color/transparent"
+        android:dividerHeight="10.0sp" />
 
 </LinearLayout>
