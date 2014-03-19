@@ -2,14 +2,13 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="fill_parent"
     android:layout_height="wrap_content"
-    android:background="@drawable/customshape" >
+    android:background="@drawable/selector">
 
     <ImageView
         android:id="@+id/picture"
         android:layout_width="50dp"
         android:layout_height="50dp"
-        android:layout_alignParentLeft="true"
-        android:layout_centerInParent="true"
+        android:layout_below="@+id/titleApp"
         android:layout_margin="10dp" />
 
     <TextView
@@ -17,19 +16,17 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginBottom="8dp"
+        android:layout_marginLeft="15dp"
         android:layout_marginTop="8dp"
         android:textAppearance="?android:attr/textAppearanceLarge"
-        android:textSize="13sp"
-        android:textStyle="bold" />
+        android:textSize="17sp"/>
 
     <TextView
         android:id="@+id/description"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/titleApp"
-        android:layout_marginBottom="8dp"
+        android:layout_marginBottom="10dp"
         android:layout_marginLeft="70dp" 
         android:layout_marginRight="15dp"/>
 

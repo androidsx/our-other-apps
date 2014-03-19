@@ -3,9 +3,11 @@ package com.example.ourotherapps;
 import java.util.ArrayList;
 
 import android.app.Activity;
+import android.content.Context;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
+import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.View;
 import android.widget.AdapterView;
@@ -34,7 +36,6 @@ public class AppsActivity extends Activity {
 	private void configureAppList(){
 		
 		ListView list = (ListView) findViewById(R.id.list);
-		list.setBackgroundResource(R.drawable.customshape);
 		ArrayList<App> arraydir = new ArrayList<App>();
 
 		arraydir.add(new App(getResources().getDrawable(R.drawable.smileys),values[0], descriptions[0]));
@@ -44,7 +45,7 @@ public class AppsActivity extends Activity {
 		arraydir.add(new App(getResources().getDrawable(R.drawable.rss), values[4], descriptions[4]));
 		
 		AppAdapter adapter = new AppAdapter(this, arraydir);
-		
+	
 		list.setAdapter(adapter);
 		list.setOnItemClickListener(new AdapterView.OnItemClickListener() {
 			@Override

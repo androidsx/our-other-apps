@@ -12,15 +12,17 @@
         android:layout_marginTop="20dp"
         android:gravity="center"
         android:text="@string/checkout"
-        android:textSize="14sp"
-        android:textStyle="bold" />
+        android:textSize="18sp"
+        android:textStyle="" />
 
     <ListView
         android:id="@+id/list"
         android:layout_width="fill_parent"
         android:layout_height="304dp"
         android:layout_weight="0.43"
-        android:background="@android:color/transparent"
+        android:layout_marginRight="8dp"
+        android:layout_marginLeft="8dp"
+        android:listSelector="@drawable/selector2"
         android:divider="@android:color/transparent"
         android:dividerHeight="10.0sp" />
 
