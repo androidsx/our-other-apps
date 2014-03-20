@@ -35,7 +35,7 @@ public class AppsActivity extends Activity {
 		list.setOnItemClickListener(new AdapterView.OnItemClickListener() {
 			@Override
 			public void onItemClick(AdapterView<?> adapter, View view,int position, long id) {
-				openApp(apps.get(position).getNamePackage());
+				openApp(apps.get(position).getPackageName());
 			}
 		});
 	}

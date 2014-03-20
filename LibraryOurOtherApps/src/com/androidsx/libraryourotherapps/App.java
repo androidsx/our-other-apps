@@ -7,21 +7,21 @@ public class App implements Serializable {
 
 
 	private static final long serialVersionUID = -6395743145003950777L;
-	private int picture;
+	private int iconResId;
 	private String title;
 	private String description;
-	private String namePackage;
+	private String packageName;
 
-	public App(int picture, String title, String description, String namePackage) {
-		this.picture = picture;
+	public App(int iconResId, String title, String description, String packageName) {
+		this.iconResId = iconResId;
 		this.title = title;
 		this.description = description;
-		this.namePackage = namePackage;
+		this.packageName = packageName;
 	}
 
 
-	public int getPicture() {
-		return picture;
+	public int getIconResId() {
+		return iconResId;
 	}
 
 	public String getTitle() {
@@ -33,8 +33,8 @@ public class App implements Serializable {
 		return description;
 	}
 	
-	public String getNamePackage() {
-		return namePackage;
+	public String getPackageName() {
+		return packageName;
 	}
 
 
