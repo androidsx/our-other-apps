@@ -6,7 +6,6 @@
     <string name="title">OurOtherApp</string>
     <string name="goactivity">Go to ActivityApps</string>
     <string name="title_activity_apps">AppsActivity</string>
-    <string name="checkout">Check out our other apps!</string>
-    <string name="publisher">All of them</string>
+
 
 </resources>

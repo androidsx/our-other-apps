@@ -7,6 +7,7 @@ import android.view.Menu;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
+import com.androidsx.libraryourotherapps.AppsActivity;
 
 public class Example extends Activity {
 	
@@ -21,7 +22,7 @@ public class Example extends Activity {
 			
 			@Override
 			public void onClick(View v) {				
-				changeActivity(com.androidsx.libraryourotherapps.AppsActivity.class);				
+				changeActivity(AppsActivity.class);				
 			}
 		});
 	}
