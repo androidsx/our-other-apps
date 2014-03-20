@@ -7,7 +7,6 @@ public class App {
 	private Drawable picture;
 	private String title;
 	private String description;	
-	private long id;
 
 	public App(Drawable picture, String title, String description) {
 		this.picture = picture;
@@ -27,10 +26,6 @@ public class App {
 	
 	public String getDescription() {
 		return description;
-	}
-
-	public long getId() {
-		return id;
 	}
 
 

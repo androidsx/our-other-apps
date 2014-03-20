@@ -34,7 +34,7 @@ public class AppAdapter extends BaseAdapter {
 
 	@Override
 	public long getItemId(int position) {
-		return items.get(position).getId();
+		return 0;
 	}
 
 	@Override
