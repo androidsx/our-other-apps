@@ -7,10 +7,16 @@ import android.view.Menu;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
+import com.androidsx.libraryourotherapps.AppsActivity;
+
+
 
 public class HelloWorld extends Activity {
 	
 	private Button btnOtherActivity;
+
+	
+	
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -32,12 +38,12 @@ public class HelloWorld extends Activity {
 			
 			@Override
 			public void onClick(View v) {			
-				changeActivity(v, AppsActivity.class);
+				changeActivity(AppsActivity.class);
 			}
 		});
 	}
 	
-	private void changeActivity(View w, Class c){
+	private void changeActivity(Class c){		
         Intent i = new Intent(this, c);
         startActivity(i);
 	}
