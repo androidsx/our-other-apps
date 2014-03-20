@@ -50,7 +50,7 @@ public class AppAdapter extends BaseAdapter {
 		App app = items.get(position);
 				
 		ImageView picture = (ImageView) v.findViewById(R.id.picture);
-		picture.setImageDrawable(app.getPicture());
+		picture.setImageDrawable(v.getResources().getDrawable(app.getPicture()));
 		TextView title = (TextView) v.findViewById(R.id.titleApp);
 		title.setText(app.getTitle());
 		TextView description = (TextView) v.findViewById(R.id.description);

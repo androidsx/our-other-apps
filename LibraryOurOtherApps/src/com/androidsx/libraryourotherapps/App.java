@@ -1,21 +1,26 @@
 package com.androidsx.libraryourotherapps;
 
-import android.graphics.drawable.Drawable;
+import java.io.Serializable;
 
-public class App {
-	
-	private Drawable picture;
+
+public class App implements Serializable {
+
+
+	private static final long serialVersionUID = -6395743145003950777L;
+	private int picture;
 	private String title;
-	private String description;	
+	private String description;
+	private String namePackage;
 
-	public App(Drawable picture, String title, String description) {
+	public App(int picture, String title, String description, String namePackage) {
 		this.picture = picture;
 		this.title = title;
 		this.description = description;
+		this.namePackage = namePackage;
 	}
 
 
-	public Drawable getPicture() {
+	public int getPicture() {
 		return picture;
 	}
 
@@ -26,6 +31,10 @@ public class App {
 	
 	public String getDescription() {
 		return description;
+	}
+	
+	public String getNamePackage() {
+		return namePackage;
 	}
 
 
