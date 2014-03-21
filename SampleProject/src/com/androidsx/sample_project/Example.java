@@ -22,7 +22,6 @@ public class Example extends Activity {
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_example);
-		generateList();
 		
 		btnLibrary = (Button)findViewById(R.id.btnLibrary);	
 		btnLibrary.setOnClickListener(new OnClickListener() {	
@@ -33,7 +32,8 @@ public class Example extends Activity {
 		});
 	}
 	
-	private void changeActivity(Class c){		
+	private void changeActivity(Class c){	
+		generateList();
 	    Intent intent = new Intent(this, c);
         intent.putExtra("listapp", apps);
         startActivity(intent);
