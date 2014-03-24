@@ -9,6 +9,9 @@ import android.view.Menu;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
+import com.androidsx.libraryourotherapps.AppsActivity;
+
+
 
 import com.androidsx.libraryourotherapps.App;
 import com.androidsx.libraryourotherapps.AppsActivity;
@@ -18,6 +21,9 @@ public class HelloWorld extends Activity {
 	
 	private Button btnOtherActivity;
 	private ArrayList<App> apps;
+
+	
+	
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -45,6 +51,7 @@ public class HelloWorld extends Activity {
 	}
 	
 	private void changeActivity(Class c){		
+<<<<<<< HEAD
 		generateList();
 	    Intent intent = new Intent(this, c);
         intent.putExtra("listapp", apps);
@@ -60,6 +67,10 @@ public class HelloWorld extends Activity {
 		apps.add(new App(R.drawable.drive,"Google Drive", "Con Google Drive puedes guardar todos tus archivos en un solo lugar, para que puedas acceder a ellos desde cualquier lugar y compartirlos con otras personas.","com.google.android.apps.docs"));
 		apps.add(new App(R.drawable.youtube,"Youtube", "YouTube a tu manera. Descarga la aplicación de YouTube oficial para Android. Conviértete en DJ, aprende Kung Fu y comparte fácilmente con tus amigos.","com.google.android.youtube"));	
 
+=======
+        Intent i = new Intent(this, c);
+        startActivity(i);
+>>>>>>> master
 	}
 
 }
