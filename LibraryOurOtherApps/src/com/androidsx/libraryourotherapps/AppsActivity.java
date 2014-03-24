@@ -3,8 +3,11 @@ package com.androidsx.libraryourotherapps;
 import java.util.ArrayList;
 <<<<<<< HEAD
 =======
+<<<<<<< HEAD
+=======
 
 >>>>>>> 87ae55bbb0c0a85f26b376906d7599f1ab4df582
+>>>>>>> master
 import android.app.Activity;
 import android.content.Intent;
 import android.net.Uri;
@@ -20,7 +23,12 @@ public class AppsActivity extends Activity {
 	private ArrayList<App> apps;
 
 =======
+<<<<<<< HEAD
+	private ArrayList<App> apps;
+
+=======
 >>>>>>> 87ae55bbb0c0a85f26b376906d7599f1ab4df582
+>>>>>>> master
 	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -28,11 +36,20 @@ public class AppsActivity extends Activity {
 		setContentView(R.layout.activity_apps);
 		ListView list = (ListView) findViewById(R.id.list);
 <<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> master
 		
 		Intent intent = getIntent();
 		apps = (ArrayList<App>) intent.getSerializableExtra("listapp");
 	
 		configureAppList(list, apps);
+<<<<<<< HEAD
+	}
+	
+	private void configureAppList(ListView list, ArrayList<App> arraydir){
+				
+=======
 	}
 	
 	private void configureAppList(ListView list, ArrayList<App> arraydir){
@@ -53,12 +70,16 @@ public class AppsActivity extends Activity {
 		arraydir.add(new App(getResources().getDrawable(R.drawable.rss), "RSS Reader", "AnyRSS es un widget que añade el RSS que quieras en tu escritorio."));
 		
 >>>>>>> 87ae55bbb0c0a85f26b376906d7599f1ab4df582
+>>>>>>> master
 		AppAdapter adapter = new AppAdapter(this, arraydir);
 	
 		list.setAdapter(adapter);
 		list.setOnItemClickListener(new AdapterView.OnItemClickListener() {
 			@Override
 			public void onItemClick(AdapterView<?> adapter, View view,int position, long id) {
+<<<<<<< HEAD
+				openApp(apps.get(position).getPackageName());
+=======
 <<<<<<< HEAD
 				openApp(apps.get(position).getPackageName());
 =======
@@ -81,6 +102,7 @@ public class AppsActivity extends Activity {
 					break;
 				}
 >>>>>>> 87ae55bbb0c0a85f26b376906d7599f1ab4df582
+>>>>>>> master
 			}
 		});
 	}
@@ -98,7 +120,11 @@ public class AppsActivity extends Activity {
 <<<<<<< HEAD
 	
 =======
+<<<<<<< HEAD
+	
+=======
 >>>>>>> 87ae55bbb0c0a85f26b376906d7599f1ab4df582
+>>>>>>> master
 
 	@Override
 	public boolean onCreateOptionsMenu(Menu menu) {

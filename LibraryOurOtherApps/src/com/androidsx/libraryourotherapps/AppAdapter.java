@@ -53,8 +53,12 @@ public class AppAdapter extends BaseAdapter {
 <<<<<<< HEAD
 		picture.setImageDrawable(v.getResources().getDrawable(app.getIconResId()));
 =======
+<<<<<<< HEAD
+		picture.setImageDrawable(v.getResources().getDrawable(app.getIconResId()));
+=======
 		picture.setImageDrawable(app.getPicture());
 >>>>>>> 87ae55bbb0c0a85f26b376906d7599f1ab4df582
+>>>>>>> master
 		TextView title = (TextView) v.findViewById(R.id.titleApp);
 		title.setText(app.getTitle());
 		TextView description = (TextView) v.findViewById(R.id.description);
