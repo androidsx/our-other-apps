@@ -23,7 +23,7 @@
             </intent-filter>
         </activity>
         <activity
-            android:name="com.example.ourotherapps.AppsActivity"
+            android:name="com.androidsx.libraryourotherapps.AppsActivity"
             android:label="@string/title_activity_apps" >
         </activity>
     </application>
