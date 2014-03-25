@@ -34,9 +34,10 @@ This is an example for add one item.
 
     appslist.add(new App(R.drawable.smileys, "Chat Toolkit", "Nuevos smileys, memes,famosos, LOLCats y emoticonos para tu aplicación favorita de chat!","com.androidsx.smileys"));
 
-Contributors
--------------------------
+
 
 Licence
 -------------------------
+
+GPL v3
 
