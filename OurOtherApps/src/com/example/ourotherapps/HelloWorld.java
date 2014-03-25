@@ -11,7 +11,7 @@ import android.view.View.OnClickListener;
 import android.widget.Button;
 
 import com.androidsx.libraryourotherapps.App;
-import com.androidsx.libraryourotherapps.AppsActivity;
+import com.androidsx.libraryourotherapps.OtherAppsActivity;
 
 
 public class HelloWorld extends Activity {
@@ -39,7 +39,7 @@ public class HelloWorld extends Activity {
 			
 			@Override
 			public void onClick(View v) {			
-				changeActivity(AppsActivity.class);
+				changeActivity(OtherAppsActivity.class);
 			}
 		});
 	}
