@@ -1,7 +1,7 @@
 Our Other Apps Library
 ==============
 
-Our Other Apps is a librery for Android 2.3+ that provide us a screen that shows others applications made by the developer who integrate it, with aim to do cross promotion.
+Our Other Apps is a library for Android 2.3+ that provide us a screen that shows others applications made by the developer who integrate it, with aim to do cross promotion.
 
 [![img1](https://raw.githubusercontent.com/androidsx/our-other-apps/master/images-readme/readmephoto.png)]()
 
@@ -34,7 +34,8 @@ This is an example for add one item.
 
     appslist.add(new App(R.drawable.smileys, "Chat Toolkit", "Nuevos smileys, memes,famosos, LOLCats y emoticonos para tu aplicación favorita de chat!","com.androidsx.smileys"));
 
-
+Contributors
+-------------------------
 
 Licence
 -------------------------
