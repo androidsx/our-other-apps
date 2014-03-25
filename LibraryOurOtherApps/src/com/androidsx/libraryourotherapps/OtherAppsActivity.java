@@ -12,19 +12,19 @@ import android.widget.ListView;
 
 public class OtherAppsActivity extends Activity {
 
-	private ArrayList<App> ourAppsList;
+	private ArrayList<App> apps;
 
 	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_apps);
-		ListView listOtherApps = (ListView) findViewById(R.id.list);
+		ListView list = (ListView) findViewById(R.id.list);
 		
 		Intent intent = getIntent();
-		ourAppsList = (ArrayList<App>) intent.getSerializableExtra("listapp");
+		apps = (ArrayList<App>) intent.getSerializableExtra("listapp");
 	
-		configureAppList(listOtherApps, ourAppsList);
+		configureAppList(list, apps);
 	}
 	
 	private void configureAppList(ListView list, ArrayList<App> arraydir){
@@ -35,7 +35,7 @@ public class OtherAppsActivity extends Activity {
 		list.setOnItemClickListener(new AdapterView.OnItemClickListener() {
 			@Override
 			public void onItemClick(AdapterView<?> adapter, View view,int position, long id) {
-				openApp(ourAppsList.get(position).getPackageName());
+				openApp(apps.get(position).getPackageName());
 			}
 		});
 	}

@@ -36,4 +36,6 @@ public class App implements Serializable {
 	public String getPackageName() {
 		return packageName;
 	}
+
+
 }
