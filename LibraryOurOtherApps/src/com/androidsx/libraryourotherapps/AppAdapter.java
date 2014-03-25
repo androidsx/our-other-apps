@@ -14,22 +14,22 @@ import android.widget.TextView;
 
 public class AppAdapter extends BaseAdapter {
 	
-	protected Activity activity;
-	protected ArrayList<App> items;
+	protected Activity actOtherApps;
+	protected ArrayList<App> appsList;
 
-	public AppAdapter(Activity activity, ArrayList<App> items) {
-	    this.activity = activity;
-	    this.items = items;
+	public AppAdapter(Activity activity, ArrayList<App> appsList) {
+	    this.actOtherApps = activity;
+	    this.appsList = appsList;
 	  }
 
 	@Override
 	public int getCount() {
-		return items.size();
+		return appsList.size();
 	}
 
 	@Override
 	public Object getItem(int position) {
-		return items.get(position);
+		return appsList.get(position);
 	}
 
 	@Override
@@ -43,11 +43,11 @@ public class AppAdapter extends BaseAdapter {
 		View v = convertView;
 	
 		if(convertView == null){
-			LayoutInflater inf = (LayoutInflater) activity.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+			LayoutInflater inf = (LayoutInflater) actOtherApps.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
 			v = inf.inflate(R.layout.custom_list, null);
 		}
 		
-		App app = items.get(position);
+		App app = appsList.get(position);
 				
 		ImageView picture = (ImageView) v.findViewById(R.id.picture);
 		picture.setImageDrawable(v.getResources().getDrawable(app.getIconResId()));

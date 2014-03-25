@@ -11,7 +11,7 @@ import android.view.View.OnClickListener;
 import android.widget.Button;
 
 import com.androidsx.libraryourotherapps.App;
-import com.androidsx.libraryourotherapps.AppsActivity;
+import com.androidsx.libraryourotherapps.OtherAppsActivity;
 
 public class Example extends Activity {
 	
@@ -28,7 +28,7 @@ public class Example extends Activity {
 		btnLibrary.setOnClickListener(new OnClickListener() {	
 			@Override
 			public void onClick(View v) {				
-				changeActivity(AppsActivity.class);				
+				changeActivity(OtherAppsActivity.class);				
 			}
 		});
 	}

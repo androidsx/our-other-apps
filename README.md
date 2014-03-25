@@ -17,7 +17,7 @@ In the propertys of the project add the library.
 Next, in the AndroidManifest.xml you have to add a new line doing reference to the library activity.
 
         <activity
-            android:name="com.androidsx.libraryourotherapps.AppsActivity"
+            android:name="com.androidsx.libraryourotherapps.OtherAppsActivity"
             android:label="@string/title_activity_apps" >
         </activity>
         
