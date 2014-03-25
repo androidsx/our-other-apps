@@ -26,7 +26,7 @@ Next, in the AndroidManifest.xml you have to add a new line doing reference to t
 Usage
 -------------------------
 
-Using the library is really simple, <a href="https://github.com/androidsx/our-other-apps/tree/master/SampleProject">that example</a> allows you to know how to link the activity apps through a button.
+Using the library is really simple, <a href="https://github.com/androidsx/our-other-apps/blob/master/SampleProject/src/com/androidsx/sample_project/Example.java">that example</a> allows you to know how to link the activity apps through a button.
 
 In order to add items into the ListView you need create an ArrayList of App objects.
 
