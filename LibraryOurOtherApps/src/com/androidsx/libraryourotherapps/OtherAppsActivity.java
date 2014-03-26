@@ -14,43 +14,42 @@ public class OtherAppsActivity extends Activity {
 
 	private ArrayList<App> apps;
 
-	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_apps);
 		ListView list = (ListView) findViewById(R.id.list);
-		
+
 		Intent intent = getIntent();
 		apps = (ArrayList<App>) intent.getSerializableExtra("listapp");
-	
+
 		configureAppList(list, apps);
 	}
-	
-	private void configureAppList(ListView list, ArrayList<App> arraydir){
-				
+
+	private void configureAppList(ListView list, ArrayList<App> arraydir) {
+
 		AppAdapter adapter = new AppAdapter(this, arraydir);
-	
+
 		list.setAdapter(adapter);
 		list.setOnItemClickListener(new AdapterView.OnItemClickListener() {
 			@Override
-			public void onItemClick(AdapterView<?> adapter, View view,int position, long id) {
+			public void onItemClick(AdapterView<?> adapter, View view,
+					int position, long id) {
 				openApp(apps.get(position).getPackageName());
 			}
 		});
 	}
-	
+
 	private void openApp(String app) {
 		try {
 			startActivity(new Intent(Intent.ACTION_VIEW,
 					Uri.parse("market://details?id=" + app)));
 		} catch (android.content.ActivityNotFoundException anfe) {
 			startActivity(new Intent(Intent.ACTION_VIEW,
-					Uri.parse("http://play.google.com/store/apps/details?id="+ app)));
+					Uri.parse("http://play.google.com/store/apps/details?id="
+							+ app)));
 		}
 	}
-	
-	
 
 	@Override
 	public boolean onCreateOptionsMenu(Menu menu) {
