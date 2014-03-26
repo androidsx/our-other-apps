@@ -5,7 +5,7 @@ Our Other Apps is a library for Android 2.3+ that provide us a screen that shows
 
 [![img1](https://raw.githubusercontent.com/androidsx/our-other-apps/master/images-readme/readmephoto.png)]()
 
-You can see the <a href="https://github.com/androidsx/our-other-apps/tree/master/SampleProject">source code of an application example</a> in which that library is integrated
+You can see the <a href="https://github.com/androidsx/our-other-apps/tree/master/sample-project">source code of an application example</a> in which that library is integrated
 
 Including in your project
 -------------------------
@@ -24,7 +24,7 @@ Next, in the AndroidManifest.xml you have to add a new line doing reference to t
 Usage
 -------------------------
 
-Using the library is really simple, <a href="https://github.com/androidsx/our-other-apps/blob/master/SampleProject/src/com/androidsx/sample_project/Example.java">that example</a> allows you to know how to link the activity apps through a button.
+Using the library is really simple, <a href="https://github.com/androidsx/our-other-apps/blob/master/sample-project/src/com/androidsx/sampleproject/Example.java">that example</a> allows you to know how to link the activity apps through a button.
 
 On the button click event, you have add this code.
 
