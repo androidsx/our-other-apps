@@ -12,8 +12,6 @@ Including in your project
 
 In the propertys of the project add the library. 
 
-    android.library.reference.1=../LibraryOurOtherApps
-
 Next, in the AndroidManifest.xml you have to add a new line doing reference to the library activity.
 
         <activity
@@ -28,7 +26,31 @@ Usage
 
 Using the library is really simple, <a href="https://github.com/androidsx/our-other-apps/blob/master/SampleProject/src/com/androidsx/sample_project/Example.java">that example</a> allows you to know how to link the activity apps through a button.
 
-In order to add items into the ListView you need create an ArrayList of App objects.
+On the button click event, you have add this code.
+
+        Intent intent = new Intent(Example.this,OtherAppsActivity.class);
+		intent.putExtra("listapp", generateAppList());
+		startActivity(intent);
+
+
+The generateAppList() method return an ArrayList<App> witch all items for the list:
+
+	private ArrayList<App> generateAppList() {
+
+		ArrayList<App> apps = new ArrayList<App>();
+
+		apps.add(new App(
+				R.drawable.smileys,
+				"Chat Toolkit",
+				"Nuevos smileys, memes,famosos, LOLCats y emoticonos para tu aplicación favorita de chat!",
+				"com.androidsx.smileys"));
+				
+		return apps;
+	}
+	
+In this case, this item is the only.
+
+In order to add items into the ListView you need add an object App into de ArrayList<App>
 
 This is an example for add one item.
 
