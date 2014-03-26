@@ -12,42 +12,42 @@ import android.widget.ListView;
 
 public class OtherAppsActivity extends Activity {
 
-	private ArrayList<App> apps;
-
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_apps);
-		ListView list = (ListView) findViewById(R.id.list);
-
 		Intent intent = getIntent();
-		apps = (ArrayList<App>) intent.getSerializableExtra("listapp");
 
-		configureAppList(list, apps);
+		ListView listview = (ListView) findViewById(R.id.list);
+		ArrayList<App> apps = (ArrayList<App>) intent
+				.getSerializableExtra("listapp");
+
+		configureAppList(listview, apps);
 	}
 
-	private void configureAppList(ListView list, ArrayList<App> arraydir) {
+	private void configureAppList(ListView listview,
+			final ArrayList<App> listApps) {
 
-		AppAdapter adapter = new AppAdapter(this, arraydir);
+		AppAdapter adapter = new AppAdapter(this, listApps);
 
-		list.setAdapter(adapter);
-		list.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+		listview.setAdapter(adapter);
+		listview.setOnItemClickListener(new AdapterView.OnItemClickListener() {
 			@Override
 			public void onItemClick(AdapterView<?> adapter, View view,
 					int position, long id) {
-				openApp(apps.get(position).getPackageName());
+				openApp(listApps.get(position).getPackageName());
 			}
 		});
 	}
 
-	private void openApp(String app) {
+	private void openApp(String packageName) {
 		try {
 			startActivity(new Intent(Intent.ACTION_VIEW,
-					Uri.parse("market://details?id=" + app)));
+					Uri.parse("market://details?id=" + packageName)));
 		} catch (android.content.ActivityNotFoundException anfe) {
 			startActivity(new Intent(Intent.ACTION_VIEW,
 					Uri.parse("http://play.google.com/store/apps/details?id="
-							+ app)));
+							+ packageName)));
 		}
 	}
 
