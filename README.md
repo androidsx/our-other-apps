@@ -61,5 +61,5 @@ This is an example for add one item.
 Licence
 -------------------------
 
-GPL v3
+MIT
 
