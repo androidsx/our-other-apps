@@ -28,33 +28,68 @@ Using the library is really simple, <a href="https://github.com/androidsx/our-ot
 
 On the button click event, you have add this code.
 
-        Intent intent = new Intent(Example.this,OtherAppsActivity.class);
-		intent.putExtra("listapp", generateAppList());
-		startActivity(intent);
+First you create a InputStream and get data from xml file. You need a XML file with get the apps in res/raw folder. It automatically searches for res/raw/listapp.xml but you can customize file.
 
 
-The generateAppList() method return an ArrayList<App> witch all items for the list:
+	<?xml version="1.0" encoding="utf-8"?>
+	<applications>
+    		<app>
+			<icon>drawable/smileys</icon>
+        		<title>Smyleys</title>
+        		<description>New smyleis, memes,famous, LOLCats y emoticon for your favorite chat application!</description>
+        		<packagename>com.androidsx.smileys</packagename>       
+    		</app>
+	</applications>
 
-	private ArrayList<App> generateAppList() {
+If you would like a multi language, you just have to put the translated files listapp.xml in the appropriate folders res/raw-xx/.
 
-		ArrayList<App> apps = new ArrayList<App>();
 
-		apps.add(new App(
-				R.drawable.smileys,
-				"Chat Toolkit",
-				"Nuevos smileys, memes,famosos, LOLCats y emoticonos para tu aplicación favorita de chat!",
-				"com.androidsx.smileys"));
-				
-		return apps;
-	}
+Once you have a xml file in res/raw, the next step is a create the event button.
+
+On the button click event, you have add this code:
+
+	InputStream in = getResources().openRawResource(R.raw.listapps);
+	AppParseXml test = new AppParseXml(in);
+	ArrayList<App> listApplications = test.readAplications();
+
+For adapt the ListView look you can change the colors, as you like, thought the Extras.
+
+	Intent intent = new Intent(Example.this, OtherAppsActivity.class);
+	intent.putExtra("listapp", listApplications);
+	intent.putExtra("textTitle", "Check out our other apps!");
+	intent.putExtra("colorTitle", Color.parseColor("#FFFFFF"));
+	intent.putExtra("backgroundColor", Color.parseColor("#595C59"));
+	intent.putExtra("borderItemColor", Color.parseColor("#8BE872"));
+	intent.putExtra("borderItemPressedColor", Color.parseColor("#343634"));
+	intent.putExtra("backgroundItemColor", Color.parseColor("#FFFFFF"));
+	intent.putExtra("backgroundItemPressedColor", Color.parseColor("#68FF54"));
+
+	startActivity(intent);
 	
-In this case, this item is the only.
+	
+This is other way to use this library without using de xml files. On the button click event, you have add this code.
 
-In order to add items into the ListView you need add an object App into de ArrayList<App>
+In order to add items into the ListView you need add objects App into de ArrayList<App>
 
-This is an example for add one item.
+	ArrayList<App> appslist = new ArrayList<App>();
+	
+	appslist.add(new App("drawable/smileys", "Chat Toolkit", "Nuevos smileys, memes,famosos, LOLCats y emoticonos para tu aplicación 		favorita de chat!","com.androidsx.smileys"));
 
-    appslist.add(new App(R.drawable.smileys, "Chat Toolkit", "Nuevos smileys, memes,famosos, LOLCats y emoticonos para tu aplicación favorita de chat!","com.androidsx.smileys"));
+	Intent intent = new Intent(Example.this, OtherAppsActivity.class);
+	intent.putExtra("listapp", applist);
+	intent.putExtra("listapp", listApplications);
+	intent.putExtra("textTitle", "Check out our other apps!");
+	intent.putExtra("colorTitle", Color.parseColor("#FFFFFF"));
+	intent.putExtra("backgroundColor", Color.parseColor("#595C59"));
+	intent.putExtra("borderItemColor", Color.parseColor("#8BE872"));
+	intent.putExtra("borderItemPressedColor", Color.parseColor("#343634"));
+	intent.putExtra("backgroundItemColor", Color.parseColor("#FFFFFF"));
+	intent.putExtra("backgroundItemPressedColor", Color.parseColor("#68FF54"));
+	startActivity(intent);
+
+
+
+
 
 
 
