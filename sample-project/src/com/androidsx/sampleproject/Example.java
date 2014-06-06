@@ -2,7 +2,6 @@ package com.androidsx.sampleproject;
 
 import java.io.InputStream;
 import java.util.ArrayList;
-
 import android.app.Activity;
 import android.content.Intent;
 import android.graphics.Color;
@@ -12,7 +11,6 @@ import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
 import android.widget.Toast;
-
 import com.androidsx.libraryourotherapps.App;
 import com.androidsx.libraryourotherapps.AppParseXml;
 import com.androidsx.libraryourotherapps.OtherAppsActivity;
@@ -34,13 +32,18 @@ public class Example extends Activity {
                 try {
                     InputStream in = getResources().openRawResource(R.raw.listapps);
                     AppParseXml test = new AppParseXml(in);
-                    ArrayList<App> a = test.readAplications();
+                    ArrayList<App> listApplications = test.readAplications();
 
                     Intent intent = new Intent(Example.this, OtherAppsActivity.class);
-                    intent.putExtra("listapp", a);
-                    intent.putExtra("textColorTitle", Color.RED);
-                    intent.putExtra("title", "Nuestras aplicaciones");
-                    // intent.putExtra("backgroundColor", Color.WHITE);
+                    intent.putExtra("listapp", listApplications);
+                    intent.putExtra("textTitle", "Our other apps");
+                    intent.putExtra("colorTitle", Color.parseColor("#47B81D"));
+                    intent.putExtra("backgroundColor", Color.parseColor("#555E51"));
+                    intent.putExtra("borderItemColor", Color.parseColor("#FF0000"));
+                    intent.putExtra("borderItemPressedColor", Color.parseColor("#FF0000"));
+                    intent.putExtra("backgroundItemColor", Color.parseColor("#E3F700"));
+                    intent.putExtra("backgroundItemPressedColor", Color.parseColor("#5862B0"));  
+                    
                     startActivity(intent);
                 } catch (Exception e) {
                     Toast.makeText(Example.this, "Ooh, error reading xml file", Toast.LENGTH_SHORT).show();
