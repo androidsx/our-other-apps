@@ -42,8 +42,8 @@ public class Example extends Activity {
                     intent.putExtra("borderItemColor", Color.parseColor("#FF0000"));
                     intent.putExtra("borderItemPressedColor", Color.parseColor("#FF0000"));
                     intent.putExtra("backgroundItemColor", Color.parseColor("#E3F700"));
-                    intent.putExtra("backgroundItemPressedColor", Color.parseColor("#5862B0"));  
-                    
+                    intent.putExtra("backgroundItemPressedColor", Color.parseColor("#5862B0"));
+
                     startActivity(intent);
                 } catch (Exception e) {
                     Toast.makeText(Example.this, "Ooh, error reading xml file", Toast.LENGTH_SHORT).show();
