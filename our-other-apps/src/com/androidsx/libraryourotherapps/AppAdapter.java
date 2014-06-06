@@ -13,51 +13,52 @@ import android.widget.TextView;
 
 public class AppAdapter extends BaseAdapter {
 
-	protected Activity actOtherApps;
-	protected ArrayList<App> appsList;
+    protected Activity actOtherApps;
+    protected ArrayList<App> appsList;
 
-	public AppAdapter(Activity activity, ArrayList<App> appsList) {
-		this.actOtherApps = activity;
-		this.appsList = appsList;
-	}
+    public AppAdapter(Activity activity, ArrayList<App> appsList) {
+        this.actOtherApps = activity;
+        this.appsList = appsList;
+    }
 
-	@Override
-	public int getCount() {
-		return appsList.size();
-	}
+    @Override
+    public int getCount() {
+        return appsList.size();
+    }
 
-	@Override
-	public Object getItem(int position) {
-		return appsList.get(position);
-	}
+    @Override
+    public Object getItem(int position) {
+        return appsList.get(position);
+    }
 
-	@Override
-	public long getItemId(int position) {
-		return position;
-	}
+    @Override
+    public long getItemId(int position) {
+        return position;
+    }
 
-	@Override
-	public View getView(int position, View convertView, ViewGroup parent) {
+    @Override
+    public View getView(int position, View convertView, ViewGroup parent) {
 
-		View v = convertView;
+        View v = convertView;
 
-		if (convertView == null) {
-			LayoutInflater inf = (LayoutInflater) actOtherApps
-					.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-			v = inf.inflate(R.layout.custom_list, null);
-		}
+        if (convertView == null) {
+            LayoutInflater inf = (LayoutInflater) actOtherApps.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+            v = inf.inflate(R.layout.custom_list, null);
+        }
 
-		App app = appsList.get(position);
+        App app = appsList.get(position);
+        
+        v.getResources();
+        int d = v.getResources().getIdentifier(app.getIconResPath(), null, v.getContext().getPackageName());
 
-		ImageView picture = (ImageView) v.findViewById(R.id.picture);
-		picture.setImageDrawable(v.getResources().getDrawable(
-				app.getIconResId()));
-		TextView title = (TextView) v.findViewById(R.id.titleApp);
-		title.setText(app.getTitle());
-		TextView description = (TextView) v.findViewById(R.id.description);
-		description.setText(app.getDescription());
+        ImageView picture = (ImageView) v.findViewById(R.id.picture);
+        picture.setImageDrawable(v.getResources().getDrawable(d));
+        TextView title = (TextView) v.findViewById(R.id.titleApp);
+        title.setText(app.getTitle());
+        TextView description = (TextView) v.findViewById(R.id.description);
+        description.setText(app.getDescription());
 
-		return v;
-	}
+        return v;
+    }
 
 }
