@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<applications>
+    <app>
+        <icon>drawable/smileys</icon>
+        <title>Smyleys</title>
+        <description>Nuevos smileys, memes,famosos, LOLCats y emoticonos para tu aplicación favorita de chat!</description>
+        <packagename>com.androidsx.smileys</packagename>       
+    </app>
+    <app>
+        <icon>drawable/lottodroid</icon>
+        <title>Lottodroid</title>
+        <description>Consulta rápidamente los números premiados en los sorteos de la lotería española: Euromillón, Bonoloto, Once, Quiniela, etc</description>
+        <packagename>com.androidsx.lottodroid</packagename>
+    </app>
+    <app>
+        <icon>drawable/corrector</icon>
+        <title>Spell Checker</title>
+        <description>Corrector ortográfico #1 en Android! Soporta muchos idiomas: inglés, español, francés, italiano, alemán, finés, sueco, polaco</description>
+        <packagename>com.androidsx.checkspelling</packagename>       
+    </app>
+    <app>
+        <icon>drawable/gallery</icon>
+        <title>Remote Gallery 3D</title>
+        <description>Disfruta y maneja tus fotos/vídeos en tu PC, Mac o TV con un solo click desde tu Android!</description>
+        <packagename>com.androidsx.easygallery</packagename>       
+    </app>
+    <app>
+        <icon>drawable/rss</icon>
+        <title>RSS Reader</title>
+        <description>AnyRSS es un widget que añade el RSS que quieras en tu escritorio</description>
+        <packagename>com.androidsx.anyrss</packagename>       
+    </app>
+</applications>
