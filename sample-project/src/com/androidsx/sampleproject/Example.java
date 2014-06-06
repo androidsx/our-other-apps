@@ -36,13 +36,13 @@ public class Example extends Activity {
 
                     Intent intent = new Intent(Example.this, OtherAppsActivity.class);
                     intent.putExtra("listapp", listApplications);
-                    intent.putExtra("textTitle", "Our other apps");
-                    intent.putExtra("colorTitle", Color.parseColor("#47B81D"));
-                    intent.putExtra("backgroundColor", Color.parseColor("#555E51"));
-                    intent.putExtra("borderItemColor", Color.parseColor("#FF0000"));
-                    intent.putExtra("borderItemPressedColor", Color.parseColor("#FF0000"));
-                    intent.putExtra("backgroundItemColor", Color.parseColor("#E3F700"));
-                    intent.putExtra("backgroundItemPressedColor", Color.parseColor("#5862B0"));
+                    intent.putExtra("textTitle", "Check out our other apps!");
+                    intent.putExtra("colorTitle", Color.parseColor("#FFFFFF"));
+                    intent.putExtra("backgroundColor", Color.parseColor("#595C59"));
+                    intent.putExtra("borderItemColor", Color.parseColor("#8BE872"));
+                    intent.putExtra("borderItemPressedColor", Color.parseColor("#343634"));
+                    intent.putExtra("backgroundItemColor", Color.parseColor("#FFFFFF"));
+                    intent.putExtra("backgroundItemPressedColor", Color.parseColor("#68FF54"));
 
                     startActivity(intent);
                 } catch (Exception e) {

@@ -14,7 +14,6 @@ import android.widget.ListView;
 import android.widget.TextView;
 
 public class OtherAppsActivity extends Activity {
-    
 
     @SuppressWarnings("unchecked")
     @Override
@@ -25,21 +24,23 @@ public class OtherAppsActivity extends Activity {
 
         ListView listview = (ListView) findViewById(R.id.list);
 
-        ArrayList<App> apps = (ArrayList<App>) intent.getSerializableExtra("listapp");        
+        ArrayList<App> apps = (ArrayList<App>) intent.getSerializableExtra("listapp");
         configureAppList(listview, apps);
 
         String textTitle = intent.getStringExtra("textTitle");
-        int textColorTitle = intent.getIntExtra("colorTitle", Color.BLACK);     
+        int textColorTitle = intent.getIntExtra("colorTitle", Color.BLACK);
         int backgroundColor = intent.getIntExtra("backgroundColor", Color.parseColor("#E1E3DA"));
         int borderItemColor = intent.getIntExtra("borderItemColor", Color.BLACK);
         int borderItemPressedColor = intent.getIntExtra("borderItemPressedColor", Color.BLACK);
         int itemColor = intent.getIntExtra("backgroundItemColor", Color.WHITE);
         int itemPressedColor = intent.getIntExtra("backgroundItemPressedColor", Color.parseColor("#B5B1B1"));
 
-        setStyles(textTitle, textColorTitle, backgroundColor, itemColor, borderItemColor, borderItemPressedColor, itemPressedColor);
+        setStyles(textTitle, textColorTitle, backgroundColor, itemColor, borderItemColor, borderItemPressedColor,
+                itemPressedColor);
     }
-    
-    private void setStyles(String textTitle, int textColorTitle, int backgroundColor, int itemColor, int borderItemColor, int borderItemPressedColor, int itemPressedColor){
+
+    private void setStyles(String textTitle, int textColorTitle, int backgroundColor, int itemColor,
+            int borderItemColor, int borderItemPressedColor, int itemPressedColor) {
         View view = this.getWindow().getDecorView();
         TextView txtTitle = (TextView) findViewById(R.id.check);
         view.setBackgroundColor(backgroundColor);
@@ -49,8 +50,8 @@ public class OtherAppsActivity extends Activity {
         GradientDrawable shapeItem = (GradientDrawable) getResources().getDrawable(R.drawable.item_selected);
         shape.setColor(itemColor);
         shapeItem.setColor(itemPressedColor);
-        shape.setStroke(1, borderItemColor);   
-        shapeItem.setStroke(1, borderItemPressedColor);
+        shape.setStroke(2, borderItemColor);
+        shapeItem.setStroke(2, borderItemPressedColor);
     }
 
     private void configureAppList(ListView listview, final ArrayList<App> listApps) {
