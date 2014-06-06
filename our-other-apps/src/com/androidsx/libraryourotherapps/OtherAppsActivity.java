@@ -1,9 +1,10 @@
 package com.androidsx.libraryourotherapps;
 
 import java.util.ArrayList;
-
 import android.app.Activity;
 import android.content.Intent;
+import android.graphics.Color;
+import android.graphics.drawable.GradientDrawable;
 import android.net.Uri;
 import android.os.Bundle;
 import android.view.Menu;
@@ -13,6 +14,7 @@ import android.widget.ListView;
 import android.widget.TextView;
 
 public class OtherAppsActivity extends Activity {
+    
 
     @SuppressWarnings("unchecked")
     @Override
@@ -22,20 +24,33 @@ public class OtherAppsActivity extends Activity {
         Intent intent = getIntent();
 
         ListView listview = (ListView) findViewById(R.id.list);
-        final TextView txtTitle = (TextView) findViewById(R.id.check);
 
-        int textColorTitle = intent.getIntExtra("textColorTitle", 0);
-        String title = intent.getStringExtra("title");
-        txtTitle.setText(title);
-        txtTitle.setTextColor(textColorTitle);
-
-        ArrayList<App> apps = (ArrayList<App>) intent.getSerializableExtra("listapp");
-
-        // View view = this.getWindow().getDecorView();
-        // int backgroundColor = intent.getIntExtra("backgroundColor", 0);
-        // view.setBackgroundColor(backgroundColor);
-
+        ArrayList<App> apps = (ArrayList<App>) intent.getSerializableExtra("listapp");        
         configureAppList(listview, apps);
+
+        String textTitle = intent.getStringExtra("textTitle");
+        int textColorTitle = intent.getIntExtra("colorTitle", Color.BLACK);     
+        int backgroundColor = intent.getIntExtra("backgroundColor", Color.parseColor("#E1E3DA"));
+        int borderItemColor = intent.getIntExtra("borderItemColor", Color.BLACK);
+        int borderItemPressedColor = intent.getIntExtra("borderItemPressedColor", Color.BLACK);
+        int itemColor = intent.getIntExtra("backgroundItemColor", Color.WHITE);
+        int itemPressedColor = intent.getIntExtra("backgroundItemPressedColor", Color.parseColor("#B5B1B1"));
+
+        setStyles(textTitle, textColorTitle, backgroundColor, itemColor, borderItemColor, borderItemPressedColor, itemPressedColor);
+    }
+    
+    private void setStyles(String textTitle, int textColorTitle, int backgroundColor, int itemColor, int borderItemColor, int borderItemPressedColor, int itemPressedColor){
+        View view = this.getWindow().getDecorView();
+        TextView txtTitle = (TextView) findViewById(R.id.check);
+        view.setBackgroundColor(backgroundColor);
+        txtTitle.setText(textTitle);
+        txtTitle.setTextColor(textColorTitle);
+        GradientDrawable shape = (GradientDrawable) getResources().getDrawable(R.drawable.customshape);
+        GradientDrawable shapeItem = (GradientDrawable) getResources().getDrawable(R.drawable.item_selected);
+        shape.setColor(itemColor);
+        shapeItem.setColor(itemPressedColor);
+        shape.setStroke(1, borderItemColor);   
+        shapeItem.setStroke(1, borderItemPressedColor);
     }
 
     private void configureAppList(ListView listview, final ArrayList<App> listApps) {
